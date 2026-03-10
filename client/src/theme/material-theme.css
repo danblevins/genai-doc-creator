@@ -1,0 +1,62 @@
+/**
+ * Material 3 theme for @material/web
+ * Tonal palette (soft pastels) + 28px card shape
+ */
+:root {
+  /* Surface – soft pastels instead of pure white */
+  --md-sys-color-surface: #f5f6f8;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #f2f5f8;
+  --md-sys-color-surface-container: #eef1f5;
+  --md-sys-color-surface-container-high: #e8ecf1;
+  --md-sys-color-surface-container-highest: #e2e6eb;
+  --md-sys-color-on-surface: #1a1d21;
+  --md-sys-color-on-surface-variant: #44494f;
+  --md-sys-color-outline: #c8d0d9;
+  --md-sys-color-outline-variant: #dce2e9;
+  /* Primary */
+  --md-sys-color-primary: #2563eb;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #dbeafe;
+  --md-sys-color-on-primary-container: #1e3a5f;
+  /* Secondary / tertiary (tonal) */
+  --md-sys-color-secondary-container: #e8ecf1;
+  --md-sys-color-on-secondary-container: #1a1d21;
+  --md-sys-color-tertiary-container: #f0f4f8;
+  --md-sys-color-on-tertiary-container: #1a1d21;
+  /* Shape – M3 28px for cards */
+  --md-sys-shape-corner-none: 0;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-color-shadow: rgba(0, 0, 0, 0.12);
+  /* Cards: M3 28px */
+  --md-outlined-card-container-shape: var(--md-sys-shape-corner-extra-large);
+}
+
+/* Dark mode (optional) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --md-sys-color-surface: #1a1f26;
+    --md-sys-color-surface-container-lowest: #0f1419;
+    --md-sys-color-surface-container-low: #1e2329;
+    --md-sys-color-surface-container: #252b33;
+    --md-sys-color-surface-container-high: #2d3748;
+    --md-sys-color-surface-container-highest: #374151;
+    --md-sys-color-on-surface: rgba(255, 255, 255, 0.92);
+    --md-sys-color-on-surface-variant: rgba(255, 255, 255, 0.7);
+    --md-sys-color-outline: #4b5563;
+    --md-sys-color-outline-variant: #374151;
+    --md-sys-color-primary: #60a5fa;
+    --md-sys-color-on-primary: #1e3a5f;
+    --md-sys-color-primary-container: #1e3a5f;
+    --md-sys-color-on-primary-container: #dbeafe;
+    --md-sys-color-secondary-container: #2d3748;
+    --md-sys-color-on-secondary-container: rgba(255, 255, 255, 0.9);
+    --md-sys-color-tertiary-container: #252b33;
+    --md-sys-color-on-tertiary-container: rgba(255, 255, 255, 0.9);
+    --md-sys-color-shadow: rgba(0, 0, 0, 0.4);
+  }
+}

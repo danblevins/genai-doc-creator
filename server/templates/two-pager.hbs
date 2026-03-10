@@ -1,0 +1,28 @@
+<div class="doc two-pager">
+  <div class="doc-cover doc-page">
+    <div class="doc-cover-visual">
+      <svg class="doc-cover-icon" viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="10" y="8" width="70" height="88" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+        <line x1="22" y1="28" x2="68" y2="28" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="22" y1="42" x2="68" y2="42" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="22" y1="56" x2="52" y2="56" stroke="currentColor" stroke-width="1.5"/>
+        <rect x="50" y="24" width="60" height="56" rx="4" stroke="currentColor" stroke-width="2" fill="none" opacity="0.7"/>
+        <path d="M62 44 L78 44 M62 54 L74 54 M62 64 L70 64" stroke="currentColor" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <h1 class="doc-cover-title">{{title}}</h1>
+    <p class="doc-cover-subtitle">Business brief · Two-page summary</p>
+  </div>
+  <div class="doc-page-break" aria-hidden="true"></div>
+  <div class="doc-page doc-page-content">
+    {{#each sections}}
+    <section class="doc-section">
+      <div class="doc-section-header">
+        <span class="doc-section-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span>
+        <h2 class="doc-heading">{{this.title}}</h2>
+      </div>
+      <div class="doc-content">{{{this.content}}}</div>
+    </section>
+    {{/each}}
+  </div>
+</div>
