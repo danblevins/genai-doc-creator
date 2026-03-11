@@ -79,13 +79,15 @@ export default function DocumentTypeSelect({
                   >
                     {generating ? 'Generating…' : 'Generate draft with AI'}
                   </md-filled-button>
-                  <md-text-button onClick={onFillFormManual} className="doc-type-fill-form-link">
-                    Fill form manually instead
-                  </md-text-button>
                 </div>
               )}
             </div>
           ))}
+        </div>
+        <div className="doc-type-fill-manual-wrap">
+          <md-text-button onClick={onFillFormManual} className="doc-type-fill-form-link">
+            Fill form manually
+          </md-text-button>
         </div>
       </md-outlined-card>
     </div>

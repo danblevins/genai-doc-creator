@@ -3,6 +3,7 @@ import DocumentTypeSelect from './components/DocumentTypeSelect';
 import TwoPagerForm from './components/TwoPagerForm';
 import QuarterlyReviewForm from './components/QuarterlyReviewForm';
 import DraftPreview from './components/DraftPreview';
+import CommentSidebar from './components/CommentSidebar';
 import ExportButtons from './components/ExportButtons';
 import GeneratingLogo from './components/GeneratingLogo';
 import { generateDraft } from './api';
@@ -16,6 +17,7 @@ export default function App() {
   const [draftHtml, setDraftHtml] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [comments, setComments] = useState([]);
   const previewRef = useRef(null);
   const draftStartRef = useRef(null);
 
@@ -52,7 +54,22 @@ export default function App() {
     setSelectedDocTypeForAI(null);
     setShowManualTypeChoice(false);
     setDraftHtml('');
+    setComments([]);
     setError(null);
+  }
+
+  function handleAddComment(comment) {
+    setComments((prev) => [...prev, comment]);
+  }
+
+  function handleDeleteComment(id) {
+    setComments((prev) => prev.filter((c) => c.id !== id));
+    const el = document.getElementById(`comment-${id}`);
+    if (el) {
+      const parent = el.parentNode;
+      while (el.firstChild) parent.insertBefore(el.firstChild, el);
+      parent.removeChild(el);
+    }
   }
 
   async function handleGenerate(payload) {
@@ -122,7 +139,7 @@ export default function App() {
   }
 
   return (
-    <div className="app">
+    <div className="app app--preview">
       <main className="app-main">
         <header className="app-header app-header--preview">
           <md-text-button onClick={handleBack} className="app-header-back">
@@ -138,10 +155,21 @@ export default function App() {
         <div className="step-2-edit-callout" role="status">
           <span className="step-2-edit-callout-icon" aria-hidden="true">✎</span>
           <p className="step-2-edit-callout-text">
-            <strong>You can edit the document below.</strong> Click any text to change it. When you’re done, use the buttons above to export as PDF or Word.
+            <strong>You can edit the document below.</strong> Select text to highlight or add a comment in the sidebar. Use the buttons above to export as PDF or Word.
           </p>
         </div>
-        <DraftPreview initialHtml={draftHtml} previewRef={previewRef} />
+        <div className="step-2-draft-layout">
+          <DraftPreview
+            initialHtml={draftHtml}
+            previewRef={previewRef}
+            onAddComment={handleAddComment}
+          />
+          <CommentSidebar
+            comments={comments}
+            previewRef={previewRef}
+            onDelete={handleDeleteComment}
+          />
+        </div>
         <div className="step-2-back-wrap">
           <md-filled-tonal-button onClick={handleBack} className="back-to-home-btn">
             <svg slot="icon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
