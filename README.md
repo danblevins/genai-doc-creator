@@ -4,6 +4,11 @@ Proof of concept for generating first-draft business documents (two-pagers and q
 
 [LIVE PROOF OF CONCEPT VIDEO](https://youtu.be/SYBXpZ9JJ40?si=N58UnqpSw-o7C-N8)
 
+The video demonstration highlights the following features:
+- Interface Overview: The tool features a clean, web-based dashboard where users can input parameters or source material to generate structured documents.
+- AI Integration: It showcases how the system processes prompts or existing data to draft content, aimed at professional or technical documentation.
+- Workflow: The video walks through the steps of selecting a template, generating the text, and reviewing the output within the application.
+
 ## Requirements
 
 - Node.js 18+ (20+ recommended for the Vite client; the API runs on Node 18+).
