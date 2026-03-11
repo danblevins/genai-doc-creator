@@ -2,6 +2,8 @@
 
 Proof of concept for generating first-draft business documents (two-pagers and quarterly/monthly reviews) from guided input. Reduces time from preparation to a solid first draft.
 
+[LIVE PROOF OF CONCEPT VIDEO](https://youtu.be/SYBXpZ9JJ40?si=N58UnqpSw-o7C-N8)
+
 ## Requirements
 
 - Node.js 18+ (20+ recommended for the Vite client; the API runs on Node 18+).
