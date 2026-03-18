@@ -1,5 +1,7 @@
 # Doc Creator
 
+**Problem Statement**: Business Professional dedicate excessive time and resources to manually creating business documents. This inefficiency bottlenecks productivity, delays strategic decision-making, and diverts energy away from high-value, creative work. We need a streamlined solution that accelerates the creation of comprehensive first drafts without compromising quality, structural integrity, or thoroughness.
+
 Proof of concept for generating first-draft business documents (two-pagers and quarterly/monthly reviews) from guided input. Reduces time from preparation to a solid first draft.
 
 [LIVE PROOF OF CONCEPT VIDEO](https://youtu.be/SYBXpZ9JJ40?si=N58UnqpSw-o7C-N8)
