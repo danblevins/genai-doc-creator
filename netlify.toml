@@ -1,0 +1,26 @@
+[build]
+  command = "npm run build"
+  publish = "client/dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Rewrite /api to Netlify Functions (order matters; first match wins)
+[[redirects]]
+  from = "/api/draft"
+  to = "/.netlify/functions/draft"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/export/docx"
+  to = "/.netlify/functions/export-docx"
+  status = 200
+  force = true
+
+# SPA fallback: serve index.html for all other routes
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

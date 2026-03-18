@@ -58,6 +58,14 @@ The video demonstration highlights the following features:
 - **GEMINI_API_KEY** (required for "with AI"): Get an API key from [Google AI Studio](https://aistudio.google.com/apikey). Copy `.env.example` to `.env` and set `GEMINI_API_KEY=...`. (`.env` is gitignored; never commit it.)
 - `PORT` (default `3001`) sets the API server port.
 
+## Deploy to Netlify
+
+The app can be deployed to Netlify with no client changes. Netlify runs the frontend build and two serverless functions for draft generation and DOCX export.
+
+1. Connect the repo to Netlify. Build command and publish directory are in `netlify.toml` (`npm run build`, `client/dist`).
+2. In Netlify **Site settings → Environment variables**, set **GEMINI_API_KEY** so "Generate with AI" works.
+3. Node 20 is used for the build and functions (set in `netlify.toml`).
+
 ## Adding a new document type
 
 1. Add a Handlebars template in `server/templates/<type>.hbs`.
