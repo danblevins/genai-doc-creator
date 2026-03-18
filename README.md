@@ -4,7 +4,7 @@
 
 Proof of concept for generating first-draft business documents (two-pagers and quarterly/monthly reviews) from guided input. Reduces time from preparation to a solid first draft.
 
-[LIVE PROOF OF CONCEPT VIDEO](https://youtu.be/SYBXpZ9JJ40?si=N58UnqpSw-o7C-N8)
+[LIVE PROOF OF CONCEPT ON NETLIFY](https://gendocc.netlify.app/)
 
 The video demonstration highlights the following features:
 - Interface Overview: The tool features a clean, web-based dashboard where users can input parameters or source material to generate structured documents.
