@@ -3,8 +3,11 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { GoogleGenAI } from '@google/genai';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.resolve(__dirname, '..', '..', '.env') });
+// Only load .env when running unbundled (e.g. local); in Netlify, import.meta.url can be undefined
+if (typeof import.meta !== 'undefined' && import.meta.url) {
+  const __dirname = path.dirname(fileURLToPath(import.meta.url));
+  dotenv.config({ path: path.resolve(__dirname, '..', '..', '.env') });
+}
 
 const MODEL = 'gemini-2.5-flash';
 

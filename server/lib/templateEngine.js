@@ -3,8 +3,11 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const templatesDir = path.join(__dirname, '..', 'templates');
+// In bundled environments (e.g. Netlify), import.meta.url may be undefined
+const _dir = typeof import.meta !== 'undefined' && import.meta.url
+  ? path.dirname(fileURLToPath(import.meta.url))
+  : path.join(process.cwd(), 'server', 'lib');
+const templatesDir = path.join(_dir, '..', 'templates');
 
 Handlebars.registerHelper('nl2br', (text) => {
   if (text == null || text === '') return '';
